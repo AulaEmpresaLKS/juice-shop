@@ -9,19 +9,6 @@ pipeline {
         SONAR_BRANCH = "${env.BRANCH_NAME}"
     }
     stages {
-        stage('Build') {
-            steps {
-                script {
-                    sh '''
-                        docker run --rm \
-                            -v ./:/app \
-                            -e JOB_ACTION=compile \
-                            -e NODE_CMD=install \
-                            $BUILD_IMAGE \
-                    '''
-                }
-            }
-        }
         stage('Sonar') {
             steps {
                 script {
