@@ -17,8 +17,9 @@ pipeline {
                     sh '''
                         docker run --rm \
                             -v ./:/app \
+                            -e JOB_ACTION=compile \
                             $BUILD_IMAGE \
-                            npm install
+                            install
                     '''
                 }
             }
@@ -36,7 +37,7 @@ pipeline {
                             -e SONAR_TOKEN=$SONAR_TOKEN \
                             -e JOB_ACTION=sonar \
                             -e SONAR_BRANCH_NAME=$SONAR_BRANCH \
-                            $IMAGE_NODE
+                            $BUILD_IMAGE
                     '''
                 }
             }
