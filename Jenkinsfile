@@ -3,7 +3,7 @@ pipeline {
         label 'zuvmljenson02'
     }
     environment {
-        BUILD_IMAGE = "registry.lksnext.com/devsecops/node-22:2.0"
+        BUILD_IMAGE = "registry.lksnext.com/devsecops/node-20:2.0"
         SONAR_HOST_URL = "https://sonarqubeenterprise.devops.lksnext.com/"
         SONAR_TOKEN = credentials('sonarenterprise-analysis-token')
         SONAR_BRANCH = "${env.BRANCH_NAME}"
