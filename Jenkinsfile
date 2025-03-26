@@ -18,8 +18,8 @@ pipeline {
                         docker run --rm \
                             -v ./:/app \
                             -e JOB_ACTION=compile \
+                            -e NODE_CMD=install \
                             $BUILD_IMAGE \
-                            install
                     '''
                 }
             }
