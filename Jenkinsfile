@@ -19,6 +19,7 @@ pipeline {
                             -e SONAR_TOKEN=$SONAR_TOKEN \
                             -e JOB_ACTION=sonar \
                             -e SONAR_BRANCH_NAME=$SONAR_BRANCH \
+                            -e SONAR_EXCLUSIONS="frontend/src/assets/" \
                             $BUILD_IMAGE
                     '''
                 }
